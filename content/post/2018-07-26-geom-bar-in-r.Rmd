@@ -35,6 +35,32 @@ ggplot(data = Arthritis, aes(x = Sex)) +
 
 ```
 
+Let's checkout what all is in the Athritis dataframe. It is very important to inspect our data to understand what we are working with. Using the head function will do what it sounds like and gives you the first few rows of the data. 
+
+Glimpse goes into how many variables and observations there are. 
+
+``` {r Arthritis dataframe}
+head(Arthritis)
+
+glimpse(Arthritis)
+```
+
+# ggplot Building Blocks
+
+A good way to think of ggplot is like building blocks. It follows a systemtic flow each time you create a visualization. 
+
+1. function - ggplot()  
+2. data parameter and this time it was "Arthritis" dataframe. 
+3. function - aes() this maps the variable to the x axis.
+4. geom - this is the object that we'r drawing, whether a bar graph, scatterplot or whatever. 
+
+``` {r geom bar}
+ggplot(data = Arthritis, aes(x = Sex)) +
+  geom_bar()
+
+```
+
+
 # Including Plots
 
 You can also embed plots. See Figure \@ref(fig:pie) for example:
