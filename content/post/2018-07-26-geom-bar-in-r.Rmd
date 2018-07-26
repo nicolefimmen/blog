@@ -1,0 +1,50 @@
+---
+title: Geom Bar in R
+author: Nicole Fimmen
+date: '2018-07-26'
+slug: geom-bar-in-r
+categories:
+  - R
+tags: []
+---
+
+
+https://www.sharpsightlabs.com/blog/ultimate-guide-bar-chart-geom_bar/
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Geom Bar with ggplot2
+
+We're going to practice the basic bar chart with ggplot2. We will be using the data set Arthritis from the vcd package. 
+
+Full disclosure, I'm doing the exact excercise laid out on Sharp Sight Data <https://www.sharpsightlabs.com/blog/ultimate-guide-bar-chart-geom_bar/>.
+
+Make sure you have the vcd library downloaded. Here are the libraries we will be using.  
+
+```{r set up}
+
+library(tidyverse)
+library(forcats)
+library(vcd)
+
+ggplot(data = Arthritis, aes(x = Sex)) +
+  geom_bar()
+
+```
+
+# Including Plots
+
+You can also embed plots. See Figure \@ref(fig:pie) for example:
+
+```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
+par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
+  col = c('#0292D8', '#F7EA39', '#C4B632'),
+  init.angle = -50, border = NA
+)
+```
