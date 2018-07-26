@@ -60,6 +60,11 @@ ggplot(data = Arthritis, aes(x = Sex)) +
 
 ```
 
+where i left off ....
+https://www.sharpsightlabs.com/blog/ultimate-guide-bar-chart-geom_bar/ 
+HOW TO MODIFY A SIMPLE GGPLOT BAR CHART
+
+
 
 # Including Plots
 
