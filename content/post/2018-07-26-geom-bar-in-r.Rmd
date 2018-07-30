@@ -59,11 +59,59 @@ ggplot(data = Arthritis, aes(x = Sex)) +
 
 ```
 
-where i left off ....
-https://www.sharpsightlabs.com/blog/ultimate-guide-bar-chart-geom_bar/ 
-HOW TO MODIFY A SIMPLE GGPLOT BAR CHART
+# Modify
+Now we will do two simply changes.
+1. change interior color of the bars
+2. change the line color of the bars
+
+In order to change the color, we will use the fill aesthetic, not the color one. 
+
+```{r}
+ggplot(data = Arthritis, aes(x = Sex)) +
+  geom_bar(fill = 'cyan')
+```
+
+Now lets try changing the border.
+
+```{r}
+ggplot(data = Arthritis, aes(x = Sex)) +
+  geom_bar(color = 'red')
+
+```
 
 
+Not the most intuitive but remember fill is for filling in the bar and color is for the outline color. 
+
+Time to modify the bar chart even more.
+
+1. Horizontal Bar Chart
+This is a simple task. Simply add coord_flip() to the end of the code. 
+
+```{r}
+ggplot(data = Arthritis, aes(x = Sex)) + geom_bar() + coord_flip()
+
+```
+
+
+2. Stacked Bar Chart
+This is simple also. Map a categorical variable to the fill asethetic. 
+
+```{r}
+ggplot(data = Arthritis, aes(x = Treatment)) +
+  geom_bar(aes(fill = Improved))
+
+```
+3. 100% Stacked Bar Chart
+Here instead of the bar length mapping to the number of records, it will fill in the whole axis. 
+
+
+```{r}
+
+ggplot(data = Arthritis, aes(x = Treatment)) +
+  geom_bar(aes(fill = Improved), position = "fill")
+
+
+```
 
 # Including Plots
 
